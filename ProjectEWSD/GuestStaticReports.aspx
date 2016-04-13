@@ -60,22 +60,37 @@
 
 				<!-- Main content -->
 				<section class="content">
-                    <div class="callout callout-info">
-              <h4>Tip!</h4>
-              <p>Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular links instead.</p>
-            </div>
-            <div class="callout callout-danger">
-              <h4>Warning!</h4>
-              <p>The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar and the content will slightly differ than that of the normal layout.</p>
-            </div>
-            <div class="box box-default">
-              <div class="box-header with-border">
-                <h3 class="box-title">Blank Box</h3>
-              </div>
-              <div class="box-body">
-                The great content goes here
-              </div><!-- /.box-body -->
-            </div>
+                    
+               <table align="center">
+                            
+                                <asp:DataList  runat="server" CssClass="table table-bordered table-striped callout callout-info" ID="dlM">
+                                    <ItemTemplate>
+                                        <div class="timeline-item">
+                                            <i class="fa fa-envelope bg-blue pull-left"><asp:Label  Text='<%# Eval("Title") %>' runat="server" ID="Label1" /> 
+                                                <tr>
+                                                    <td>
+                                                        <span class="time pull-right">
+                                                            <i class="fa fa-calendar">
+                                                            </i>
+                                                            <asp:Label CssClass="time" ID="labeldate1" runat="server" Text='<%# Eval("DateRP") %>'></asp:Label>
+                                                        </span>
+
+                                                    
+                                                
+                                                
+                                                    <div class="timeline-body" style="width: 937px">
+                                                        <asp:Label CssClass="timeline-body pull-left" ID="labelcontent1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                                                          <asp:Label Visible="false" Text='<%# Eval("IDWrite") %>' runat="server" ID="lbEmailFrom" />
+                                                    </div>
+                                                    <br />
+                                            
+                                            </td>
+                                    </ItemTemplate>
+                                </asp:DataList>
+                           
+                        </table>
+
+                  
 				</section>
 				<!-- /.content -->
 			</div>
